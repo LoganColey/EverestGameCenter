@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static%}
+    <title>Snake Game</title>
+    <link href="{% static 'snake.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="snaketitle">Snake</div>
+    <div id="snakegame">
+      <p id="start_message">Press a key to Start!</p>
+      <a id="snake_replay" href="{% url 'snake' %}">Replay</a>
+      <div id="score">Score: 0</div>
+      <canvas id="snakeboard" width="500" height="500"></canvas>
+    </div>
+  </body>
+
+  <script src="{% static 'snake.js' %}"></script>
+</html>
