@@ -1,14 +1,16 @@
-const block = document.getElementById("block");
-let hole = document.getElementById("hole");
-let character = document.getElementById("character");
-let jumping = 0;
-hole.addEventListener("animationiteration", () => {
-  let random = Math.random() * 3;
-  let top =  (random*200)+150
-  hole.style.top = -(top) + "px";
+var block = document.getElementById("block");
+var hole = document.getElementById("hole");
+var character = document.getElementById("character");
+var jumping = 0;
+var counter = 0;
+
+hole.addEventListener('animationiteration', () => {
+    var random = -((Math.random()*300)+150);
+    hole.style.top = random + "px";
+    counter++;
 });
-setInterval(function () {
-  var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+setInterval(function(){
+    var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     if(jumping==0){
         character.style.top = (characterTop+3)+"px";
     }
@@ -22,9 +24,9 @@ setInterval(function () {
     }
 },10);
 
-
 function jump(){
-  jumping = 1;
+    jumping = 1;
+    document
     let jumpCount = 0;
     var jumpInterval = setInterval(function(){
         var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
