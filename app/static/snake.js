@@ -1,6 +1,5 @@
-const board_border = "black";
-const board_background = "white";
-const snake_col = "purple";
+const snake_col = "lightblue";
+const snake_border = "darkblue";
 
 let snake = [
   { x: 200, y: 200 },
@@ -11,6 +10,7 @@ let snake = [
 ];
 
 let score = 0;
+let apples = 0;
 // True if changing direction
 let changing_direction = false;
 // Horizontal velocity
@@ -25,6 +25,8 @@ const snakeboard = document.getElementById("snakeboard");
 // Return a two dimensional drawing context
 const snakeboard_ctx = snakeboard.getContext("2d");
 // Start game
+
+gen_food();
 
 document.addEventListener("keydown", change_direction);
 clear_board();
@@ -52,13 +54,26 @@ function main() {
 // draw a border around the canvas
 function clear_board() {
   //  Select the colour to fill the drawing
-  snakeboard_ctx.fillStyle = board_background;
+  snakeboard_ctx.fillStyle = "green";
   //  Select the colour for the border of the canvas
-  snakeboard_ctx.strokestyle = board_border;
+  snakeboard_ctx.strokestyle = "black";
   // Draw a "filled" rectangle to cover the entire canvas
   snakeboard_ctx.fillRect(0, 0, snakeboard.width, snakeboard.height);
   // Draw a "border" around the entire canvas
   snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
+  // const columns = 25
+  // const rows = 25
+  // for (let i = 0; i < columns; i++ ) {
+  //   for (let x = 0; x < rows; x++ ) {
+  //     if ((i + x) % 2) {
+  //       snakeboard_ctx.fillStyle = '#328483'
+  //       snakeboard_ctx.fillRect(1+(20*(i-1)),1+(20*(x-1)),20,20)
+  //     } else {
+  //       snakeboard_ctx.fillStyle = '#46b904'
+  //       snakeboard_ctx.fillRect(1+(20*(i-1)),1+(20*(x-1)),20,20)
+  //     }
+  //   }
+  // }
 }
 
 // Draw the snake on the canvas
@@ -79,14 +94,12 @@ function drawFood() {
 // Draw one snake part
 function drawSnakePart(snakePart) {
   // Set the colour of the snake part
-  snakeboard_ctx.fillStyle = snake_col;
+  snakeboard_ctx.fillStyle = "purple";
   // Set the border colour of the snake part
-  snakeboard_ctx.strokestyle = snake_border;
   // Draw a "filled" rectangle to represent the snake part at the coordinates
   // the part is located
   snakeboard_ctx.fillRect(snakePart.x, snakePart.y, 20, 20);
   // Draw a border around the snake part
-  // snakeboard_ctx.strokeRect(snakePart.x, snakePart.y, 20, 20);
 }
 
 function has_game_ended() {
@@ -94,10 +107,10 @@ function has_game_ended() {
     if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
   }
   const hitLeftWall = snake[0].x < 0;
-  const hitRightWall = snake[0].x > snakeboard.width - 10;
-  const hitTopWall = snake[0].y < 0;
-  const hitBottomWall = snake[0].y > snakeboard.height - 10;
-  return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
+  const hitRightWall = snake[0].x > snakeboard.width - 20;
+  const hitToptWall = snake[0].y < 0;
+  const hitBottomWall = snake[0].y > snakeboard.height - 20;
+  return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
 }
 
 function random_food(min, max) {
@@ -105,9 +118,6 @@ function random_food(min, max) {
 }
 
 function gen_food() {
-  var audio = new Audio("audio/apple.mp4");
-  audio.play();
-
   // Generate a random number the food x-coordinate
   food_x = random_food(0, snakeboard.width - 20);
   // Generate a random number for the food y-coordinate
@@ -160,9 +170,20 @@ function move_snake() {
   const has_eaten_food = snake[0].x === food_x && snake[0].y === food_y;
   if (has_eaten_food) {
     // Increase score
-    score += 10;
+    if (apples >= 100) {
+      score += 25;
+    } else if (apples >= 75) {
+      score += 20;
+    } else if (apples >= 50) {
+      score += 15;
+    } else {
+      score += 10;
+    }
+    apples += 1;
     // Display score on screen
     document.getElementById("score").innerHTML = "Score: " + score;
+    document.getElementById("apples_eaten").innerHTML =
+      "Apples Eaten: " + apples;
     // Generate new food location
     gen_food();
   } else {
