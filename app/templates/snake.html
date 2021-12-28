@@ -10,8 +10,11 @@
     <div id="snaketitle">Snake</div>
     <div id="snakegame">
       <p id="start_message">Press a key to Start!</p>
+      <div id="stats">
+        <p id="score">Score: 0</p>
+        <p id="apples_eaten">Apples Eaten: 0</p>
+      </div>
       <a id="snake_replay" href="{% url 'snake' %}">Replay</a>
-      <div id="score">Score: 0</div>
       <canvas id="snakeboard" width="500" height="500"></canvas>
     </div>
   </body>
