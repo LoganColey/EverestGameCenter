@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'spaceinvaders.css' %}">
+  </head>
+    
+  <body>
+      <div class="background"></div>
+      <img class="ship" src="{% static 'images/spaceship.png' %}" alt="ship-img">
+      <div class="message">
+        Press Enter To Start Game
+      </div>
+      <div class="score">
+        <span class="score_title"></span>
+        <span class="score_val"></span>
+      </div>
+      <script src="{% static 'spaceinvaders.js' %}"></script>
+  </body>
+</html>
