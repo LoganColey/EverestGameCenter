@@ -53,27 +53,27 @@ function main() {
 
 // draw a border around the canvas
 function clear_board() {
-  //  Select the colour to fill the drawing
-  snakeboard_ctx.fillStyle = "green";
-  //  Select the colour for the border of the canvas
-  snakeboard_ctx.strokestyle = "black";
-  // Draw a "filled" rectangle to cover the entire canvas
-  snakeboard_ctx.fillRect(0, 0, snakeboard.width, snakeboard.height);
-  // Draw a "border" around the entire canvas
-  snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
-  // const columns = 25
-  // const rows = 25
-  // for (let i = 0; i < columns; i++ ) {
-  //   for (let x = 0; x < rows; x++ ) {
-  //     if ((i + x) % 2) {
-  //       snakeboard_ctx.fillStyle = '#328483'
-  //       snakeboard_ctx.fillRect(1+(20*(i-1)),1+(20*(x-1)),20,20)
-  //     } else {
-  //       snakeboard_ctx.fillStyle = '#46b904'
-  //       snakeboard_ctx.fillRect(1+(20*(i-1)),1+(20*(x-1)),20,20)
-  //     }
-  //   }
-  // }
+  // //  Select the colour to fill the drawing
+  // snakeboard_ctx.fillStyle = "green";
+  // //  Select the colour for the border of the canvas
+  // snakeboard_ctx.strokestyle = "black";
+  // // Draw a "filled" rectangle to cover the entire canvas
+  // snakeboard_ctx.fillRect(0, 0, snakeboard.width, snakeboard.height);
+  // // Draw a "border" around the entire canvas
+  // snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
+  const columns = 25
+  const rows = 25
+  for (let i = 0; i < columns; i++ ) {
+    for (let x = 0; x < rows; x++ ) {
+      if ((i + x) % 2) {
+        snakeboard_ctx.fillStyle = '#328483'
+        snakeboard_ctx.fillRect(1+(20*(i-1)),1+(20*(x-1)),20,20)
+      } else {
+        snakeboard_ctx.fillStyle = '#46b904'
+        snakeboard_ctx.fillRect(1+(20*(i-1)),1+(20*(x-1)),20,20)
+      }
+    }
+  }
 }
 
 // Draw the snake on the canvas
