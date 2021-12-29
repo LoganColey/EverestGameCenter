@@ -21,3 +21,15 @@
     margin: 20px 80px 0 1100px;
     color: white;
 }
+
+.mySlides {
+    width: 100%;
+    height: 500px;
+    display: none;
+}
+
+.slideshow {
+    width: 1000px;
+    height: 500px;
+    margin: 200px 0 0 400px;
+}
