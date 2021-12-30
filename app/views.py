@@ -14,6 +14,9 @@ def space_invaders(request) -> HttpResponse:
 def run(request) -> HttpResponse:
     return render(request, "run.html")
 
+def pacman(request) -> HttpResponse:
+    return render(request,"pacman.html")
+
 def main(request) -> HttpResponse:
     context = {
         "games" : {
