@@ -4,32 +4,62 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-}
-
-.link {
+    border-style: outset;
+    border-color: gray;
+  }
+  
+  .link {
     font-size: 25px;
-    width: 50px;
-    height: 50px;
-    margin: 20px 80px 0 20px;
+    width: 110px;
+    height: 55px;
+    margin-left: 35px;
+    padding-top: 20px;
+    text-align: center;
     color: white;
-}
-
-.login {
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .login:hover {
+    color: black;
+    background-color: white;
+  }
+  .login {
     font-size: 25px;
-    width: 50px;
-    height: 75px;
-    margin: 20px 80px 0 1100px;
+    width: 100px;
+    height: 55px;
+    margin-left: 1100px;
+    padding-top: 20px;
+    text-align: center;
     color: white;
-}
-
-.mySlides {
+    text-decoration: none;
+  }
+  
+  .mySlides {
     width: 100%;
     height: 500px;
     display: none;
-}
-
-.slideshow {
+  }
+  
+  .slideshow {
     width: 1000px;
     height: 500px;
-    margin: 200px 0 0 400px;
-}
+    margin: 150px 0 0 400px;
+  }
+  
+  .home_page {
+    background-image: url(images/background.jpg);
+  }
+  
+  .title {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+  }
+  
