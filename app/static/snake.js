@@ -61,16 +61,16 @@ function clear_board() {
   // snakeboard_ctx.fillRect(0, 0, snakeboard.width, snakeboard.height);
   // // Draw a "border" around the entire canvas
   // snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
-  const columns = 25
-  const rows = 25
-  for (let i = 0; i < columns; i++ ) {
-    for (let x = 0; x < rows; x++ ) {
+  const columns = 26;
+  const rows = 26;
+  for (let i = 0; i < columns; i++) {
+    for (let x = 0; x < rows; x++) {
       if ((i + x) % 2) {
-        snakeboard_ctx.fillStyle = '#328483'
-        snakeboard_ctx.fillRect(1+(20*(i-1)),1+(20*(x-1)),20,20)
+        snakeboard_ctx.fillStyle = "#1f9505";
+        snakeboard_ctx.fillRect(1 + 20 * (i - 1), 1 + 20 * (x - 1), 20, 20);
       } else {
-        snakeboard_ctx.fillStyle = '#46b904'
-        snakeboard_ctx.fillRect(1+(20*(i-1)),1+(20*(x-1)),20,20)
+        snakeboard_ctx.fillStyle = "#46b904";
+        snakeboard_ctx.fillRect(1 + 20 * (i - 1), 1 + 20 * (x - 1), 20, 20);
       }
     }
   }
@@ -86,7 +86,7 @@ function drawFood() {
   snakeboard_ctx.fillStyle = "red";
   snakeboard_ctx.strokestyle = "black";
   snakeboard_ctx.beginPath();
-  snakeboard_ctx.arc(food_x + 10, food_y + 10, 9, 0, 2 * Math.PI, false);
+  snakeboard_ctx.arc(food_x + 11, food_y + 11, 9, 0, 2 * Math.PI, false);
   snakeboard_ctx.stroke();
   snakeboard_ctx.fill();
 }
