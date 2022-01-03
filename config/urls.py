@@ -9,6 +9,8 @@ urlpatterns = [
     path('flappybirb/', views.flappy_birb),
     path('spaceinvaders/', views.space_invaders),
     path('run/', views.run),
-    path('pacman/', views.pacman),
-    path('', views.main)
+    path('', views.main, name="main"),
+    path('login/', views.login_page, name="login"),
+    path('signup/', views.signup, name="signup"),
+    path('pacman/', views.pacman)
 ]
