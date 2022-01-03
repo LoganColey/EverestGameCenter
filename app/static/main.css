@@ -61,5 +61,13 @@
     text-align: center;
     color: white;
     font-size: 50px;
+    background-color: black;
+    padding: 15px;
+    width: 1000px;
+    height: 65px;
+    margin: 25px 0 0 385px;
+    border-style: ridge;
+    border-width: 2px;
+    border-color: gray;
   }
   
