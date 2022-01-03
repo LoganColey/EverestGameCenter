@@ -1,36 +1,20 @@
-// var myIndex = 0;
-// carousel();
-
-// function carousel() {
-//   var x = document.getElementsByClassName("mySlides");
-//   for (var i = 0; i < x.length; i++) {
-//     x[i].style.display = "none";  
-//   }
-//   myIndex++;
-//   if (myIndex > x.length) {myIndex = 1}   
-//   if (myIndex < 1) {myIndex = x.length} 
-//   x[myIndex-1].style.display = "block";  
-//   setTimeout(carousel, 5000); // Change image every 5 seconds
-// }
-
-// function plusDivs(n) {
-//     myIndex += n;
-//   }
-var myIndex = 0;
-carousel(1);
-
-function carousel(n) {
-    clearInterval(myTimer)
-    auto(n);
-    function auto(f){
-    var x = document.getElementsByClassName("mySlides");
-    for (var i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    myIndex += f;
-    if (myIndex > x.length) {myIndex = 1}
-    if (myIndex < 1) {myIndex = x.length}
-    x[myIndex - 1].style.display = "block"
+var slideIndex = 1;
+showSlides(1);
+function showSlides(n) {
+  var slides = document.getElementsByClassName("mySlides");
+  if (n == undefined) {
+    n = ++slideIndex;
+  }
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 5000);
 }
-    var myTimer = setInterval(auto(1), 5000);
+
+function notloggedin() {
+  alert("Cannot Access! Login to view!");
 }
