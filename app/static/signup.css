@@ -1,0 +1,46 @@
+body {
+  background-image: url(images/background.jpg);
+}
+
+.navbar {
+  background-color: black;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-style: outset;
+  border-color: gray;
+}
+
+.link {
+  font-size: 25px;
+  width: 110px;
+  height: 55px;
+  margin-left: 35px;
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.login:hover {
+  color: black;
+  background-color: white;
+}
+.login {
+  font-size: 25px;
+  width: 100px;
+  height: 55px;
+  margin-left: 1100px;
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
