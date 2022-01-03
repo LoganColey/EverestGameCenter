@@ -1,22 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app.templates import *
-# Create your views here.
+from .forms import LoginForm, RegisterForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+from .models import User, Achievement
+from .decorators import unauthenticated_user
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import Group
+from django.contrib.auth.decorators import login_required
+
+
+@login_required(login_url='login')
 def flappy_birb(request) -> HttpResponse:
     return render(request, "flappybirb.html")
 
+@login_required(login_url='login')
 def snake(request) -> HttpResponse:
     return render(request, 'snake.html')
 
+@login_required(login_url='login')
 def space_invaders(request) -> HttpResponse:
     return render(request, "spaceinvaders.html")
 
+@login_required(login_url='login')
 def run(request) -> HttpResponse:
     return render(request, "run.html")
 
+@login_required(login_url='login')
 def pacman(request) -> HttpResponse:
     return render(request,"pacman.html")
 
+@unauthenticated_user
 def main(request) -> HttpResponse:
     context = {
         "games" : {
@@ -29,3 +44,45 @@ def main(request) -> HttpResponse:
         }
     }
     return render(request, 'main.html', context)
+
+@unauthenticated_user
+def login_page(request) -> HttpResponse:
+    form = LoginForm()
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        username = form.get('username')
+        password = form.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('home.html')
+        else:
+            messages.info(request, "Username OR Password is incorrect!")
+
+    context = {"form":form}
+    return render(request, 'login.html', context)
+
+@unauthenticated_user
+def signup(request) -> HttpResponse:
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        form = RegisterForm()
+        if request.POST:
+            form = RegisterForm(request.POST)
+            if form.is_valid():
+                username = form.cleaned_data['username']
+                password = form.cleaned_data['password2']
+                user = User(username=username, password=password)
+                user.save()
+                messages.success(request, "Account Created!!")
+                return redirect('login')
+        context = {"form":form}
+        return render(request, 'signup.html', context)
+
+    
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
