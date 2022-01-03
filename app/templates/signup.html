@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <title>Sign Up</title>
+    {% comment %}
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    {% endcomment %} <link rel="stylesheet" href="{% static "signup.css" %}"/>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="link" href="{% url 'main' %}">Home</a>
+      <a class="link" onClick="notloggedin()">Stats</a>
+      <a class="link" onClick="notloggedin()">Shop</a>
+      <a class="login" href="{% url 'login' %}">Login</a>
+      <a class="link" href="{% url 'signup' %}">Sign Up</a>
+    </nav>
+    {% comment %}
+    <div class="signup_card">
+      <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+          <div class="d-flex justify-content-center">
+            <h3 class="form_title">REGISTER ACCOUNT</h3>
+          </div>
+          <div class="d-flex justify-content-center form_container">
+            <form method="POST" action="">
+              {% csrf_token %}
+              <div class="input-group mb-3">
+                <div class="input-group-append">
+                  <span class="input-group-text"
+                    ><i class="fas fa-user"></i
+                  ></span>
+                </div>
+                <input type="text" name="username" />
+              </div>
+              <div class="input-group mb-2">
+                <div class="input-group-append">
+                  <span class="input-group-text"
+                    ><i class="fas fa-envelope-square"></i
+                  ></span>
+                </div>
+                <input type="password" name="password1" />
+              </div>
+              <div class="input-group mb-2">
+                <div class="input-group-append">
+                  <span class="input-group-text"
+                    ><i class="fas fa-key"></i
+                  ></span>
+                </div>
+                <input type="password" name="password2" />
+              </div>
+
+              <div class="d-flex justify-content-center mt-3 login_container">
+                <input
+                  class="btn login_btn"
+                  type="submit"
+                  value="Register Account"
+                />
+              </div>
+            </form>
+          </div>
+          {{form.errors}}
+        </div>
+      </div>
+    </div>
+    {% endcomment %}
+    <script>
+      function notloggedin() {
+        alert("Cannot Access! Login to view!");
+      }
+
+      var form_fields = document.getElementsByTagName("input");
+      form_fields[1].placeholder = "Username..";
+      form_fields[2].placeholder = "Enter password...";
+      form_fields[3].placeholder = "Re-enter Password...";
+
+      for (var field in form_fields) {
+        form_fields[field].className += " form-control";
+      }
+    </script>
+  </body>
+</html>
