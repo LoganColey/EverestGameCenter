@@ -1,8 +1,7 @@
 {% load static %}
 <nav class="navbar">
-    <a class="link">Home</a>
-    <a class="link">Stats</a>
-    <a class="link">Shop</a>
-    <a class="login">Login</a>
-    <a class="link">Sign Up</a>
+    <a class="link" href="{% url 'home' %}">Home</a>
+    <a class="link" href="">Stats</a>
+    <a class="link" href="">Shop</a>
+    <a href="{% url 'logout' %}" class="username">{{request.user}}</a>
 </nav>
