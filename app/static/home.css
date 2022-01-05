@@ -1,0 +1,118 @@
+.navbar {
+    background-color: black;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-style: outset;
+    border-color: gray;
+  }
+  
+  .link {
+    font-size: 25px;
+    width: 110px;
+    height: 55px;
+    margin-left: 35px;
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .login:hover {
+    color: black;
+    background-color: white;
+  }
+  .login {
+    font-size: 25px;
+    width: 100px;
+    height: 55px;
+    margin-left: 1100px;
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .mySlides {
+    width: 100%;
+    height: 500px;
+    display: none;
+  }
+  
+  .slideshow {
+    width: 1000px;
+    height: 500px;
+    margin: 150px 0 0 400px;
+    position: relative;
+  }
+  
+  .home_page {
+    background-image: url(images/background.jpg);
+  }
+  
+  .title {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    background-color: black;
+    padding: 15px;
+    width: 1000px;
+    height: 65px;
+    margin: 25px 0 0 385px;
+    border-style: ridge;
+    border-width: 2px;
+    border-color: gray;
+  }
+  
+  .slideshow_dot {
+      color: white;
+      bottom: 10px;
+      font-size: 200%;
+      margin-left: 10px;
+  }
+
+  .slideshow_dot:hover {
+    color: gray;
+    cursor: pointer;
+  }
+
+  .slideshow_btns {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: 150px;
+      background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .left_btn {
+      margin: 0 320px 0 25px;
+      width: 40px;
+      height: 25px;
+  }
+
+  .right_btn {
+      margin: 0 25px 0 320px;
+      width: 40px;
+      height: 25px;
+  }
+
+  .game_name {
+    text-align: center;
+    color: white;
+    padding: 0;
+  }
+  
+  .username {
+    color: white;
+    font-size: 25px;
+    margin-left: 1100px;
+    margin-top: 25px;
+  }
