@@ -108,9 +108,9 @@ function has_game_ended() {
   }
   const hitLeftWall = snake[0].x < 0;
   const hitRightWall = snake[0].x > snakeboard.width - 20;
-  const hitToptWall = snake[0].y < 0;
+  const hitTopWall = snake[0].y < 0;
   const hitBottomWall = snake[0].y > snakeboard.height - 20;
-  return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall;
+  return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
 }
 
 function random_food(min, max) {
@@ -190,4 +190,8 @@ function move_snake() {
     // Remove the last part of snake body
     snake.pop();
   }
+}
+
+function togglePopup() {
+  document.getElementById("popup-1").classList.toggle("active");
 }
