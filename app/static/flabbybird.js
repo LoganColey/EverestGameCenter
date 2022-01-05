@@ -161,3 +161,29 @@ function play() {
   }
   requestAnimationFrame(create_pipe);
 }
+
+bb = 0
+changeBackground = document.getElementById("changeBackground")
+background = document.getElementById("background")
+changeBackground.addEventListener("click", () => {
+  if (bb == 0){
+    background.style.backgroundColor = "red";
+    bb ++ ;
+  }
+  else if (bb == 1){
+    background.style.backgroundColor = "white";
+    bb ++ ;
+  }
+  else if (bb == 2){
+    background.style.backgroundColor = "purple";
+    bb ++ ;
+  }
+  else if (bb == 3){
+    background.style.backgroundColor = "green";
+    bb ++ ;
+  }
+  else if (bb == 4){
+    background.style.backgroundColor = "skyblue";
+    bb = 0;
+  }
+})
