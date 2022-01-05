@@ -28,3 +28,7 @@ function showDivs(n) {
   function currentDiv(n) {
     showDivs(slideIndex = n);
   }
+
+  function toggledropdown() {
+    document.getElementsByClassName("content")[0].classList.toggle("show")
+  }
