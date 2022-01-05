@@ -1,7 +1,12 @@
 {% load static %}
 <nav class="navbar">
-    <a class="link" href="{% url 'home' %}">Home</a>
-    <a class="link" href="">Stats</a>
-    <a class="link" href="">Shop</a>
-    <a href="{% url 'logout' %}" class="username">{{request.user}}</a>
+    <a class="link" href="{% url 'main' %}">Home</a>
+    <div class="dropdown">
+        <h1 class="username" onClick="toggledropdown()">{{request.user}}</h1>
+        <div class="content">
+            <a href="">Profile</a>
+            <a href="">Settings</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
 </nav>
