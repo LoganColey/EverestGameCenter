@@ -10,6 +10,14 @@
     <div id="snaketitle">Snake</div>
     <div id="snakegame">
       <p id="start_message">Press a key to Start!</p>
+      <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="close-btn" onclick="togglePopup()">&times;</div>
+          <p>Stuff</p>
+        </div>
+      </div>
+    <button onclick="togglePopup()">Settings</button>
       <div id="stats">
         <p id="score">Score: 0</p>
         <p id="apples_eaten">Apples Eaten: 0</p>
