@@ -1,5 +1,8 @@
 var character = document.getElementById("character");
 var block = document.getElementById("block");
+var changeCharacter = document.getElementById("changecharacter");
+var changeBlock = document.getElementById("changeblock");
+var changeBackground = document.getElementById("changebackground");
 var counter=0;
 function jump(){
     if(character.classList == "animate"){return}
@@ -21,3 +24,10 @@ var checkDead = setInterval(function() {
         document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
     }
 }, 10);
+
+changeCharacter.addEventListener("click", () =>{
+    if (character.style.backgroundColor == 'red'){
+        character.style.backgroundColor = 'purple';
+    }
+
+})
