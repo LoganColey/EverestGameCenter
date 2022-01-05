@@ -4,7 +4,7 @@ from app.templates import *
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import UserProfile, Achievement
+from .models import UserProfile, UserSettings
 from .decorators import unauthenticated_user
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
