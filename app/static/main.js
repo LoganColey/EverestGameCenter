@@ -14,7 +14,3 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 5000);
 }
-
-function notloggedin() {
-  alert("Cannot Access! Login to view!");
-}
