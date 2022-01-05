@@ -8,8 +8,6 @@
   <body>
     <nav class="navbar">
       <a class="link" href="{% url 'main' %}">Home</a>
-      <a class="link" onClick="notloggedin()">Stats</a>
-      <a class="link" onClick="notloggedin()">Shop</a>
       <a class="login" href="{% url 'login' %}">Login</a>
       <a class="link" href="{% url 'signup' %}">Sign Up</a>
     </nav>
@@ -26,10 +24,6 @@
       {{form.errors}}
     </div>
     <script>
-      function notloggedin() {
-        alert("Cannot Access! Login to view!");
-      }
-
       var form_fields = document.getElementsByTagName("input");
       form_fields[1].placeholder = "Username..";
       form_fields[2].placeholder = "Enter password...";
