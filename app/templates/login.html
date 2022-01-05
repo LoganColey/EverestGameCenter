@@ -11,8 +11,6 @@
   <body>
     <nav class="navbar">
       <a class="link" href="{% url 'main' %}">Home</a>
-      <a class="link" onClick="notloggedin()">Stats</a>
-      <a class="link" onClick="notloggedin()">Shop</a>
       <a class="login" href="{% url 'login' %}">Login</a>
       <a class="link" href="{% url 'signup' %}">Sign Up</a>
     </nav>
@@ -26,10 +24,5 @@
         <input type="submit" value="Login">
       </form>
     </div>
-    <script>
-      function notloggedin() {
-        alert("Cannot Access! Login to view!");
-      }
-    </script>
   </body>
 </html>
