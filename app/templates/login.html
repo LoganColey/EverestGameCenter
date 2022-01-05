@@ -9,6 +9,27 @@
     <link rel="stylesheet" href="{% static 'signup.css' %}" />
   </head>
   <body>
-    <div class="signup_card"></div>
+    <nav class="navbar">
+      <a class="link" href="{% url 'main' %}">Home</a>
+      <a class="link" onClick="notloggedin()">Stats</a>
+      <a class="link" onClick="notloggedin()">Shop</a>
+      <a class="login" href="{% url 'login' %}">Login</a>
+      <a class="link" href="{% url 'signup' %}">Sign Up</a>
+    </nav>
+    <div class="signup_card">
+      <form method="POST" action="">
+        {% csrf_token %}
+        <p>Username:</p>
+        <input name="username">
+        <p>Password:</p>
+        <input name="password">
+        <input type="submit" value="Login">
+      </form>
+    </div>
+    <script>
+      function notloggedin() {
+        alert("Cannot Access! Login to view!");
+      }
+    </script>
   </body>
 </html>
