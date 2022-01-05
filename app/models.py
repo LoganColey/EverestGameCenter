@@ -1,8 +1,7 @@
 from django.db import models
 
-class User(models.Model):
-    username = models.CharField(max_length=20, null=True)
-    password = models.CharField(max_length=15, null=True)
+class UserProfile(models.Model):
+    user = models.CharField(max_length=20, null=True)
     pac_high_score = models.PositiveIntegerField(null=True)
     snake_high_score = models.PositiveIntegerField(null=True)
     run_high_score = models.PositiveIntegerField(null=True)
@@ -18,4 +17,4 @@ class Achievement(models.Model):
     game = models.CharField(max_length=50, null=True)
     name = models.CharField(max_length=50, null=True)
     description = models.CharField(max_length=100, null=True)
-    user = models.ManyToManyField(User)
+    user = models.ManyToManyField(UserProfile)
