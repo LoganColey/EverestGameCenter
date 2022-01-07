@@ -1,44 +1,142 @@
-*{
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
+* {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
-.game{
-    width: 500px;
-    height: 500px;
-    border: 1px solid black;
-    margin: auto;
+.game {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  margin: auto;
+  background-color: white;
 }
-#character{
-    width: 40px;
-    height: 100px;
-    background-color: red;
-    position:relative;
-    top: 400px;
+#character {
+  width: 40px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  top: 400px;
 }
-.animate{
-    animation: jump 0.3s linear;
+.animate {
+  animation: jump 0.3s linear;
 }
-@keyframes jump{
-    0%{top: 350px;}
-    30%{top: 300px;}
-    70%{top: 300px;}
-    100%{top: 350px;}
+@keyframes jump {
+  0% {
+    top: 350px;
+  }
+  30% {
+    top: 300px;
+  }
+  70% {
+    top: 300px;
+  }
+  100% {
+    top: 350px;
+  }
 }
 
-#block{
-    background-color: blue;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    top: 360px;
+#block {
+  background-color: blue;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 360px;
+  left: 500px;
+  animation: block 1s infinite linear;
+}
+@keyframes block {
+  0% {
     left: 500px;
-    animation: block 1s infinite linear;
+  }
+  100% {
+    left: -20px;
+  }
 }
-@keyframes block{
-    0%{left: 500px}
-    100%{left: -20px}
+p {
+  text-align: center;
 }
-p{
-    text-align: center;
+
+.navbar {
+  background-color: black;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-style: outset;
+  border-color: gray;
+}
+
+.link {
+  font-size: 25px;
+  width: 110px;
+  height: 55px;
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.username {
+  color: white;
+  font-size: 25px;
+  margin-left: 1335px;
+  margin-top: 25px;
+  text-decoration: none;
+}
+
+.logout {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  padding-top: 25px;
+  width: 125px;
+  text-align: center;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  color: black;
+  background-color: white;
+}
+
+body {
+  background-image: url(images/background.jpg);
+}
+
+.game_card {
+  width: 1000px;
+  height: 700px;
+  background-color: #bf00ff;
+  margin-left: 430px;
+}
+
+.game_title {
+  text-align: center;
+  font-size: 75px;
+  color: #e1db0b;
+  margin-top: 15px;
+}
+
+.replay_btn {
+  text-decoration: none;
+  width: 30px;
+  height: 20px;
+  color: black;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 20px black;
+  margin-left: 470px;
+}
+
+.replay_btn:hover {
+  color: white;
+  background-color: black;
 }

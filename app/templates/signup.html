@@ -12,14 +12,11 @@
       <a class="link" href="{% url 'signup' %}">Sign Up</a>
     </nav>
     <div class="signup_card">
-      <form method="POST" action="">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input
-        class="btn login_btn"
-        type="submit"
-        value="Register Account"
-      />
+      <h1 class="signup_title">Sign Up</h1>
+      <hr />
+      <form class="login_form" method="POST" action="">
+        {% csrf_token %} {{form.as_p}}
+        <input class="login_btn" type="submit" value="Register Account" />
       </form>
       {{form.errors}}
     </div>

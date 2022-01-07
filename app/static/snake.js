@@ -38,7 +38,14 @@ document.addEventListener("keypress", main);
 function main() {
   document.removeEventListener("keypress", main);
   document.getElementById("start_message").innerHTML = "";
-  if (has_game_ended()) return;
+  if (player_won()) {
+    alert("Congratulations!!! You Won!!");
+    return;
+  }
+  if (has_game_ended()) {
+    alert("*Sad Trumpet Noises* Better Luck Next Time!!");
+    return;
+  }
 
   changing_direction = false;
   setTimeout(function onTick() {
@@ -74,6 +81,10 @@ function clear_board() {
       }
     }
   }
+}
+
+function player_won() {
+  return snake.length == 625;
 }
 
 // Draw the snake on the canvas

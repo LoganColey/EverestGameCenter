@@ -1,0 +1,12 @@
+[ERROR Jan  6 22:54:30.428034723, defaults.go:149] Could not load configuration: Failed to load configuration.
+
+Stacktrace: /home/runner/work/cli/cli/internal/logging/logging.go:github.com/ActiveState/cli/internal/logging.Error:258
+/home/runner/work/cli/cli/internal/logging/defaults.go:github.com/ActiveState/cli/internal/logging.init.0:149
+/opt/hostedtoolcache/go/1.15.15/x64/src/runtime/proc.go:runtime.doInit:5652
+/opt/hostedtoolcache/go/1.15.15/x64/src/runtime/proc.go:runtime.doInit:5647
+/opt/hostedtoolcache/go/1.15.15/x64/src/runtime/proc.go:runtime.doInit:5647
+/opt/hostedtoolcache/go/1.15.15/x64/src/runtime/proc.go:runtime.main:191
+/opt/hostedtoolcache/go/1.15.15/x64/src/runtime/asm_amd64.s:runtime.goexit:1374
+
+[DEBUG Jan  6 22:54:30.428407762, defaults.go:178] Args: [/home/linuxbrew/.linuxbrew/bin/state exec --path /home/student/ActiveState-Labs/Python-3.9Beta -- python3.9 -m mypy --follow-imports=silent --ignore-missing-imports --show-column-numbers --no-pretty /home/student/projects/EverestGameCenter3/EverestGameCenter/config/urls.py]
+[DEBUG Jan  6 22:54:30.430010688, locale.go:34] Init

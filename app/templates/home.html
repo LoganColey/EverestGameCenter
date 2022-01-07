@@ -10,13 +10,6 @@
     {% include 'navbar.html' %}
     <h1 class="title">Welcome To Everest Game Center!</h1>
     <div class="slideshow">
-      <a class="game_link" href="">
-      <img
-        class="mySlides"
-        id="Galaga"
-        src="https://www.wikihow.com/images/thumb/0/03/Play-Galaga-Like-a-Pro-Step-1-Version-2.jpg/v4-460px-Play-Galaga-Like-a-Pro-Step-1-Version-2.jpg.webp"
-      />
-      </a>
       <a class="game_link" href="{% url 'pacman' %}">
       <img
         class="mySlides"
@@ -38,13 +31,6 @@
         src="https://i.pcmag.com/imagery/articles/01kOuDEoQIHlbRAiuAt54sq-1.fit_scale.size_1028x578.v1569485675.jpg"
       />
       </a>
-      <a class="game_link" href="">
-      <img
-        class="mySlides"
-        id="Tetris"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Typical_Tetris_Game.svg/640px-Typical_Tetris_Game.svg.png"
-      />
-      </a>
       <a class="game_link" href="{% url 'run' %}">
       <img
         class="mySlides"
@@ -59,8 +45,6 @@
         <span class="slideshow_dot" onClick="currentDiv(2)">&#8226</span>
         <span class="slideshow_dot" onClick="currentDiv(3)">&#8226</span>
         <span class="slideshow_dot" onClick="currentDiv(4)">&#8226</span>
-        <span class="slideshow_dot" onClick="currentDiv(5)">&#8226</span>
-        <span class="slideshow_dot" onClick="currentDiv(6)" style="margin-right: 10px;">&#8226</span>
         <button class="right_btn" onClick="plusDivs(1)">&#10095;</button>
         </div>
     </div>

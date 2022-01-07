@@ -38,7 +38,7 @@ body {
   font-size: 25px;
   width: 100px;
   height: 55px;
-  margin-left: 1100px;
+  margin-left: 1400px;
   padding-top: 20px;
   text-align: center;
   color: white;
@@ -46,8 +46,38 @@ body {
 }
 
 .signup_card {
-  background-color: aqua;
+  background-color: #bf00ff;
   width: 500px;
   height: 600px;
-  margin: 100px 0 0 600px;
+  margin: 100px 0 0 675px;
 }
+
+.signup_title {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 25px;
+}
+
+.login_btn {
+  height: 40px;
+  width: 150px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  margin-top: 100px;
+  /* margin-left: 150px; */
+}
+
+.login_btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.login_form {
+  text-align: center;
+  padding-top: 25px;
+}
+
+/* .form-field {
+  position: absolute;
+} */
